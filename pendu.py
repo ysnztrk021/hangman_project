@@ -5,9 +5,9 @@ import time
 def get_word():
     with open('mots.txt', 'r') as file:
         rand = file.read()
-        word = list(map(str, rand.split()))
-        rand = random.choice(word)
-        return rand
+        rand = list(map(str, rand.split()))
+        word = random.choice(rand)
+        return word
 
 word = get_word()
 
