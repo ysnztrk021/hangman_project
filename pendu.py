@@ -56,7 +56,7 @@ def play():
                 os.system('cls')
             
         if len(wrong) > 0 and chance > 0:
-            print('Voici les mauvaises lettres que vous avez déjà introduit \n',''.join(wrong),'\n',sep='')
+            print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n','Et il vous reste ',chance,' chance(s)',sep='')
                 
     if chance ==0:
         print("Vous avez perdu !")
