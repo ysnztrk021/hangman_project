@@ -4,8 +4,8 @@ import time
 
 def get_word():
     with open('mots.txt', 'r') as file:
-        rand = file.read()
-        rand = list(map(str, rand.split()))
+        rando = file.read()
+        rand = list(map(str, rando.split()))
         word = random.choice(rand)
         return word
 
@@ -20,7 +20,9 @@ def dash():
 dash = dash()
 
 def pendu():
-    print('bjr')
+    with open('pendu.txt','r') as file:
+        hangman = file.read()
+        return hangman
     
 
 def play():
@@ -54,5 +56,5 @@ def play():
     if chance ==0:
         print("Vous avez perdu !")
         
-play()
+pendu()
        
