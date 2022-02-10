@@ -29,7 +29,7 @@ def play():
         print(''.join(guess),'\n')
         guessed = input("Devinez la lettre/ le mot ! \n")
         
-        if guessed in wrong:
+        if guessed.upper() in wrong:
             print('Vous avez déjà introduit cette lettre')
             time.sleep(1)
             os.system('cls')
