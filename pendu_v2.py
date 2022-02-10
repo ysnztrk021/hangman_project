@@ -70,7 +70,7 @@ def play():
                     
                 
             if ''.join(guess)==word:
-                print("Félicitation, vous avez trouvé le mot ", ''.join(guess))
+                print("Félicitation, vous avez trouvé le mot", ''.join(guess))
                 break
             
         if len(wrong) > 0 and chance > 0:
@@ -78,11 +78,11 @@ def play():
         if len(wrong_word) > 0 and chance > 0:
             print('Voici les mauvais mots que vous avez déjà introduit \n','[',','.join(wrong_word),']','\n',sep='')
         if chance >0:
-            print("Il vous reste ",chance," chances !\n")
+            print("Il vous reste",chance,"chances !\n")
                 
     if chance ==0:
         print(hang[chance])
         print("Vous avez perdu !")
-        print("Le mot à trouver était ",word)
+        print("Le mot à trouver était",word)
         
 play()
