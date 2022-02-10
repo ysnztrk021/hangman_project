@@ -19,15 +19,16 @@ def dash():
 
 dash = dash()
 
+
 def play():
-    chance = 8
+    chance = 7
     print("\nBIENVENUE AU JEU 'BONHOMME PENDU'\n\n")
     guess = list(dash)
     wrong=[]
     hang.reverse()
 
     while chance > 0:
-        print(hang[chance-1])
+        print(hang[chance])
         print(''.join(guess),'\n')
         guessed = input("Devinez la lettre/ le mot ! \n")
         
@@ -37,7 +38,7 @@ def play():
             os.system('cls')
 
         else:
-                
+            
             if guessed.upper() in word:
                 for i in range(len(word)):
                     if word[i]==guessed.upper():
@@ -61,6 +62,7 @@ def play():
             print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n','Et il vous reste ',chance,' chance(s)',sep='')
                 
     if chance ==0:
+        print(hang[chance])
         print("Vous avez perdu !")
         print("Le mot à trouver était ",word)
         
