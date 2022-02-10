@@ -19,12 +19,6 @@ def dash():
 
 dash = dash()
 
-def pendu():
-    with open('pendu.txt','r') as file:
-        hangman = file.read()
-        return hangman
-    
-
 def play():
     chance = 6
     print("\nBIENVENUE AU JEU 'BONHOMME PENDU'\n\n")
@@ -56,5 +50,5 @@ def play():
     if chance ==0:
         print("Vous avez perdu !")
         
-pendu()
+play()
        
