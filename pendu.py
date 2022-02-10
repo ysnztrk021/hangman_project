@@ -36,14 +36,11 @@ def play():
             os.system('cls')
 
         else:
-            if ''.join(guess)==word:
-                print("Félicitation, vous avez trouvé le mot !")
-                break
                 
             if guessed.upper() in word:
                 for i in range(len(word)):
-                    if list(word)[i]==guessed.upper():
-                        guess[i]+=guessed
+                    if word[i]==guessed.upper():
+                        guess[i]=guessed.upper()
                 print(''.join(guess))
                 time.sleep(1)
                 os.system('cls')
@@ -54,12 +51,17 @@ def play():
                 chance-=1
                 time.sleep(1)
                 os.system('cls')
+                
+            if ''.join(guess)==word:
+                print("Félicitation, vous avez trouvé le mot !")
+                break
             
         if len(wrong) > 0 and chance > 0:
-            print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n','Et il vous reste ',chance,' chance(s)',sep='')
+            print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n','Et il vous reste ',chance,' chance(s)','\n',sep='')
                 
     if chance ==0:
         print("Vous avez perdu !")
+        print("Le mot à trouver était ",word)
         
 play()
        
