@@ -25,6 +25,7 @@ def play():
     print("\nBIENVENUE AU JEU 'BONHOMME PENDU'\n\n")
     guess = list(dash)
     wrong=[]
+    wrong_word=[]
     hang.reverse()
 
     while chance > 0:
@@ -39,27 +40,45 @@ def play():
 
         else:
             
-            if guessed.upper() in word:
-                for i in range(len(word)):
-                    if word[i]==guessed.upper():
-                        guess[i]=guessed.upper()
-                print(''.join(guess))
-                time.sleep(1)
-                os.system('cls')
+            if len(guessed) == 1:
+            
+                if guessed.upper() in word:
+                    for i in range(len(word)):
+                        if word[i]==guessed.upper():
+                            guess[i]=guessed.upper()
+                    print(''.join(guess))
+                    time.sleep(1)
+                    os.system('cls')
+                    
+                elif guessed.upper() not in word :
+                    wrong.append(guessed.upper())
+                    print('Vous avez entrez la mauvaise lettre')
+                    chance-=1
+                    time.sleep(1)
+                    os.system('cls')
+            else:
                 
-            elif guessed not in word :
-                wrong.append(guessed)
-                print('Vous avez entrez la mauvaise lettre/mot')
-                chance-=1
-                time.sleep(1)
-                os.system('cls')
+                if guessed.upper() == word:
+                    print("Félicitation, vous avez trouvé le mot", guessed.upper())
+                
+                else:
+                    wrong_word.append(guessed.upper())
+                    print('Vous avez entrez le mauvais mot')
+                    chance-=1
+                    time.sleep(1)
+                    os.system('cls')
+                    
                 
             if ''.join(guess)==word:
-                print("Félicitation, vous avez trouvé le mot !")
+                print("Félicitation, vous avez trouvé le mot ", ''.join(guess))
                 break
             
         if len(wrong) > 0 and chance > 0:
-            print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n','Et il vous reste ',chance,' chance(s)',sep='')
+            print('Voici les mauvaises lettres que vous avez déjà introduit \n','[',','.join(wrong),']','\n',sep='')
+        if len(wrong_word) > 0 and chance > 0:
+            print('Voici les mauvais mots que vous avez déjà introduit \n','[',','.join(wrong_word),']','\n',sep='')
+        if chance >0:
+            print("Il vous reste ",chance," chances !\n")
                 
     if chance ==0:
         print(hang[chance])
