@@ -23,7 +23,6 @@ def play():
     chance = 6
     print("\nBIENVENUE AU JEU 'BONHOMME PENDU'\n\n")
     guess = list(dash)
-    print("Voici le nombre de lettre à deviner")
     wrong=[]
 
     while chance > 0:
