@@ -58,7 +58,11 @@ def play():
                     os.system('cls')
             else:
                 
-                if guessed.upper() != word:
+                if guessed.upper() == word:
+                    print("Félicitation, vous avez trouvé le mot", guessed.upper())
+                    break
+                
+                else:
                     wrong_word.append(guessed.upper())
                     print('Vous avez entrez le mauvais mot')
                     chance-=1
